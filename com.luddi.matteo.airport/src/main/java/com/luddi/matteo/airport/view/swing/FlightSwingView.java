@@ -25,6 +25,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
+import javax.swing.WindowConstants;
 import javax.swing.JScrollPane;
 
 public class FlightSwingView extends JFrame implements FlightView {
@@ -57,7 +58,7 @@ public class FlightSwingView extends JFrame implements FlightView {
 	
 	public FlightSwingView() {
 		setTitle("Flight View");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 440, 311);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -151,11 +152,15 @@ public class FlightSwingView extends JFrame implements FlightView {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
+				//no behavior
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
+				//no behavior
 			}
+
+			
 		});
 		passengersNumberTextField.addKeyListener(btnAddEnabler);
 		passengersNumberTextField.addKeyListener(btnChangeEnabler);
