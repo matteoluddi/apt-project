@@ -2,9 +2,10 @@ package com.luddi.matteo.airport.bdd.steps;
 
 import static com.luddi.matteo.airport.bdd.steps.DatabaseSteps.COLLECTION_NAME;
 import static com.luddi.matteo.airport.bdd.steps.DatabaseSteps.DB_NAME;
+import com.luddi.matteo.airport.bdd.AirportSwingAppBDD;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.swing.launcher.ApplicationLauncher.application;
-
 import java.util.regex.Pattern;
 
 import javax.swing.JFrame;
@@ -14,8 +15,6 @@ import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.core.matcher.JButtonMatcher;
 import org.assertj.swing.finder.WindowFinder;
 import org.assertj.swing.fixture.FrameFixture;
-
-import com.luddi.matteo.airport.bdd.AirportSwingAppBDD;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;

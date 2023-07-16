@@ -15,6 +15,10 @@ import com.mongodb.client.model.Updates;
 
 public class FlightMongoRepository implements FlightRepository{
 
+	private static final String ID = "id";
+	private static final String DESTINATION = "destination";
+	private static final String PASSENGERSNUMBER = "passengersNumber";
+	
 	private MongoCollection<Document> flightCollection;
 
 	public FlightMongoRepository(MongoClient client, String databaseName, String collectionName) {
@@ -33,7 +37,7 @@ public class FlightMongoRepository implements FlightRepository{
 
 	@Override
 	public Flight findById(String id) {
-		Document d = flightCollection.find(Filters.eq("id", id)).first();
+		Document d = flightCollection.find(Filters.eq(ID, id)).first();
 		if (d != null)
 			return fromDocumentToFlight(d);
 		return null;
@@ -43,25 +47,25 @@ public class FlightMongoRepository implements FlightRepository{
 	public void save(Flight flight) {
 		flightCollection.insertOne(
 				new Document()
-					.append("id", flight.getId())
-					.append("destination", flight.getDestination())
-					.append("passengersNumber", flight.getPassengersNumber()));		
+					.append(ID, flight.getId())
+					.append(DESTINATION, flight.getDestination())
+					.append(PASSENGERSNUMBER, flight.getPassengersNumber()));		
 	}
 
 	@Override
 	public void delete(String id) {
-		flightCollection.deleteOne(Filters.eq("id", id));
+		flightCollection.deleteOne(Filters.eq(ID, id));
 		
 	}
 
 	private Flight fromDocumentToFlight(Document d) {
-		return new Flight(""+d.get("id"), ""+d.get("destination"), d.getInteger("passengersNumber"));
+		return new Flight(""+d.get(ID), ""+d.get(DESTINATION), d.getInteger(PASSENGERSNUMBER));
 	}
 
 	@Override
 	public void change(Flight flight) {
-		flightCollection.updateOne(Filters.eq("id", flight.getId()),
-				Updates.set("passengersNumber", flight.getPassengersNumber()));	
+		flightCollection.updateOne(Filters.eq(ID, flight.getId()),
+				Updates.set(PASSENGERSNUMBER, flight.getPassengersNumber()));	
 	}
 
 }
