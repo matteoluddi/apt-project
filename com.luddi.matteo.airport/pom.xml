@@ -17,8 +17,7 @@
     <mongo.driver.version>3.12.10</mongo.driver.version>
     <mongo.java.server.version>1.39.0</mongo.java.server.version>
     <testcontainers.version>1.18.1</testcontainers.version>
-    <picocli.version>4.6.1</picocli.version>
-    <cucumber.version>5.5.0</cucumber.version>
+    <picocli.version>4.6.1</picocli.version>    
   </properties>
 
   <dependencies>
@@ -144,6 +143,11 @@
               <mutator>STRONGER</mutator>
             </mutators>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.8.0.2131</version>
         </plugin>
       </plugins>
     </pluginManagement>
