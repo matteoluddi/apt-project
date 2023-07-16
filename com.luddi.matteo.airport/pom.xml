@@ -128,7 +128,6 @@
     </dependency>
   </dependencies>
 
-
   <build>
 	<pluginManagement>
       <plugins>
@@ -239,18 +238,6 @@
               <goal>integration-test</goal>
               <goal>verify</goal>
             </goals>
-          </execution>
-          <execution>
-            <id>e2e-tests</id>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-            <configuration>
-              <excludes>
-                <exclude>**/*IT.java</exclude>
-              </excludes>
-            </configuration>
           </execution>
           <execution>
             <id>bdd-tests</id>
