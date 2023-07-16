@@ -18,4 +18,5 @@ public class AirportSwingAppBDD {
 		public static void setUpOnce() {
 			FailOnThreadViolationRepaintManager.install();
 		}
+		
 }

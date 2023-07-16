@@ -162,6 +162,7 @@ public class FlightSwingView extends JFrame implements FlightView {
 
 			
 		});
+		
 		passengersNumberTextField.addKeyListener(btnAddEnabler);
 		passengersNumberTextField.addKeyListener(btnChangeEnabler);
 		passengersNumberTextField.setName("passengersNumberTextBox");
@@ -249,9 +250,6 @@ public class FlightSwingView extends JFrame implements FlightView {
 		gbc_lblErrorMessage.gridy = 7;
 		contentPane.add(lblErrorMessage, gbc_lblErrorMessage);
 	}
-
-	
-	
 
 	private void enebleButtonChange() {
 		btnChange.setEnabled(idTextField.getText().trim().isEmpty() &&

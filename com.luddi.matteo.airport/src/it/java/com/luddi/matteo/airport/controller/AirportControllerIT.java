@@ -26,9 +26,7 @@ public class AirportControllerIT {
 
 	@Mock
 	private FlightView flightView;
-
 	private FlightRepository flightRepository;
-
 	private AirportController airportController;
 
 	private MongoClient client;
@@ -52,7 +50,6 @@ public class AirportControllerIT {
 	public void tearDown() {
 		client.close();
 	}
-
 	
 	@Test
 	public void testAllFlights() {

@@ -107,4 +107,5 @@ public class FlightSwingViewTest {
 		assertThat(window.list("flightList").contents())
 			.anySatisfy(e -> assertThat(e).contains("1", "flight1", "15"));
 	}
+	
 }

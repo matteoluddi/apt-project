@@ -159,5 +159,4 @@ public class FlightSwingViewIT extends AssertJSwingJUnitTestCase{
 			.requireText("No existing flight with id 1: 1 - notExistent - 10");
 	}
 	
-	
 }
