@@ -85,7 +85,7 @@ public class FlightMongoRepositoryTest {
 	public void testFindByIdFound() {
 		addTestFlightToDatabase("1", "test1", 10);
 		addTestFlightToDatabase("2", "test2", 15);
-		addTestFlightToDatabase("3", "tet3", 17);
+		addTestFlightToDatabase("3", "test3", 17);
 		assertThat(flightRepository.findById("1"))
 			.isEqualTo(new Flight("1", "test1", 10));
 	}
