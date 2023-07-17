@@ -149,6 +149,7 @@ public class FlightSwingView extends JFrame implements FlightView {
                 }
             }		
 		});
+		passengersNumberTextField.setTransferHandler(null);
 		
 		passengersNumberTextField.addKeyListener(btnAddEnabler);
 		passengersNumberTextField.addKeyListener(btnChangeEnabler);
