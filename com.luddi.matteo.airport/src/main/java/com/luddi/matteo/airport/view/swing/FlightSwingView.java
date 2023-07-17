@@ -17,7 +17,6 @@ import javax.swing.JTextField;
 import java.awt.Insets;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.List;
 
 import javax.swing.DefaultListCellRenderer;
