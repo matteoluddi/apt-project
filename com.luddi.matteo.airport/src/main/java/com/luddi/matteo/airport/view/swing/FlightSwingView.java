@@ -17,7 +17,6 @@ import javax.swing.JTextField;
 import java.awt.Insets;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.List;
 
 import javax.swing.DefaultListCellRenderer;
@@ -141,26 +140,14 @@ public class FlightSwingView extends JFrame implements FlightView {
 		contentPane.add(lblPassengersNumber, gbc_lblPassengersNumber);
 		
 		passengersNumberTextField = new JTextField();
-		passengersNumberTextField.addKeyListener(new KeyListener() {
-			 @Override
-	            public void keyTyped(KeyEvent e) {
-	                char c = e.getKeyChar();
-	                if (!Character.isDigit(c)) {
-	                	e.consume();
-	                }
-	            }
-
+		passengersNumberTextField.addKeyListener(new KeyAdapter() {
 			@Override
-			public void keyPressed(KeyEvent e) {
-				//no behavior
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				//no behavior
-			}
-
-			
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                	e.consume();
+                }
+            }		
 		});
 		
 		passengersNumberTextField.addKeyListener(btnAddEnabler);
