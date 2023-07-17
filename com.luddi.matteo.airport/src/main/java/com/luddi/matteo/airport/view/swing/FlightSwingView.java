@@ -45,10 +45,10 @@ public class FlightSwingView extends JFrame implements FlightView {
 	private JButton btnDeleteSelected;
 	private JLabel lblErrorMessage;
 	private JList<Flight> listFlights;
-	private DefaultListModel<Flight> listFlighstModel;
+	private DefaultListModel<Flight> listFlightsModel;
 
 	DefaultListModel<Flight> getListFlightModel() {
-		return listFlighstModel;
+		return listFlightsModel;
 	}
 	
 	public void setAirportController(AirportController airportController) {
@@ -194,8 +194,8 @@ public class FlightSwingView extends JFrame implements FlightView {
 		gbc_scrollPane.gridy = 5;
 		contentPane.add(scrollPane, gbc_scrollPane);
 
-		listFlighstModel = new DefaultListModel<>();
-		listFlights = new JList<>(listFlighstModel);
+		listFlightsModel = new DefaultListModel<>();
+		listFlights = new JList<>(listFlightsModel);
 		
 		listFlights.setCellRenderer(new DefaultListCellRenderer() {
 			private static final long serialVersionUID = 1L;
@@ -248,7 +248,7 @@ public class FlightSwingView extends JFrame implements FlightView {
 
 	@Override
 	public void showAllFlights(List<Flight> flights) {
-		flights.stream().forEach(listFlighstModel::addElement);
+		flights.stream().forEach(listFlightsModel::addElement);
 	}
 
 	@Override
@@ -258,20 +258,20 @@ public class FlightSwingView extends JFrame implements FlightView {
 
 	@Override
 	public void flightAdded(Flight flight) {
-		listFlighstModel.addElement(flight);
+		listFlightsModel.addElement(flight);
 		resetErrorLabel();
 	}
 
 	@Override
 	public void flightRemoved(Flight flight) {
-		listFlighstModel.removeElement(flight);
+		listFlightsModel.removeElement(flight);
 		resetErrorLabel();
 	}
 
 	@Override
 	public void flightChanged(Flight flightToChange, int newPassengersNumber) {
-		int index = listFlighstModel.indexOf(flightToChange);
-		listFlighstModel.setElementAt(new Flight(flightToChange.getId(), flightToChange.getDestination(), newPassengersNumber), index);
+		int index = listFlightsModel.indexOf(flightToChange);
+		listFlightsModel.setElementAt(new Flight(flightToChange.getId(), flightToChange.getDestination(), newPassengersNumber), index);
 		resetErrorLabel();
 	}
 	
@@ -286,7 +286,7 @@ public class FlightSwingView extends JFrame implements FlightView {
 	@Override
 	public void showErrorFlightNotFound(String message, Flight flight) {
 		lblErrorMessage.setText(message + ": " + getDisplayString(flight));
-		listFlighstModel.removeElement(flight);		
+		listFlightsModel.removeElement(flight);		
 	}
 
 }
