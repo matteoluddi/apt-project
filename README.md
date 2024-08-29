@@ -12,3 +12,4 @@ Progetto di Advanced Programming Techniques. Implementato un semplice sistema di
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=matteoluddi_apt-project2&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=matteoluddi_apt-project2)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=matteoluddi_apt-project2&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=matteoluddi_apt-project2)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=matteoluddi_apt-project2&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=matteoluddi_apt-project2)
+Update
